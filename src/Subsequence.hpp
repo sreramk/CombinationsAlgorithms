@@ -132,12 +132,12 @@ void Subsequence <ArrayEleType>::sort_array_subseq_prod() {
 
 template <typename ArrayEleType>
 uint64_t Subsequence <ArrayEleType>::subsequence_prod_problem () {
-	return recrussive_combination_counter (prod_subsequence_condition );
+	return recursive_combination_counter (prod_subsequence_condition );
 }
 
 template <typename ArrayEleType>
-uint64_t Subsequence <ArrayEleType>::recrussive_combination_counter (Condition condition) {
-	resultCount = recrussive_combination (condition, operation_counter);
+uint64_t Subsequence <ArrayEleType>::recursive_combination_counter (Condition condition) {
+	resultCount = recursive_combination (condition, operation_counter);
 	return resultCount;
 }
 
@@ -162,7 +162,7 @@ uint64_t Subsequence <ArrayEleType>::subsequence_prod_problem_optimized() {
 	}
 
 	if (splitup.size() == 0) {
-		result += recrussive_combination (sortedArray, prod_subsequence_condition, operation_counter);
+		result += recursive_combination (sortedArray, prod_subsequence_condition, operation_counter);
 	} else {
 		for (uint64_t i = 0; i < splitup.size(); i++) {
 			splitup[i].subsequence_prod_problem();
@@ -173,7 +173,7 @@ uint64_t Subsequence <ArrayEleType>::subsequence_prod_problem_optimized() {
 
 
 template <typename ArrayEleType>
-uint64_t Subsequence <ArrayEleType>::recrussive_combination (const ArrayType_t& parray,
+uint64_t Subsequence <ArrayEleType>::recursive_combination (const ArrayType_t& parray,
 		Condition condition, PerformOperation operation) {
 
 	bool exitFlag = false;
@@ -202,7 +202,7 @@ uint64_t Subsequence <ArrayEleType>::recrussive_combination (const ArrayType_t& 
 			}
 		}
 
-		counter += recrussive_combination (newArg, condition, operation );
+		counter += recursive_combination (newArg, condition, operation );
 
 	}
 

@@ -89,18 +89,18 @@ public:
 	static uint64_t compute_2pow_n (uint64_t n);
 
 
-	uint64_t recrussive_combination (Condition condition, PerformOperation operation) {
-		return recrussive_combination (sortedArray, condition, operation);
+	uint64_t recursive_combination (Condition condition, PerformOperation operation) {
+		return recursive_combination (sortedArray, condition, operation);
 	}
 
-	uint64_t recrussive_combination ( const ArrayType_t& parray,
+	uint64_t recursive_combination ( const ArrayType_t& parray,
 			Condition condition, PerformOperation operation);
 
 
 	static uint64_t operation_counter (Condition condition, const ArrayType_t& parray,
 			bool& exitFlag, std::set <ArrayType_t>&hashTable);
 
-	uint64_t recrussive_combination_counter (Condition condition);
+	uint64_t recursive_combination_counter (Condition condition);
 
 	static bool prod_subsequence_condition (const ArrayType_t& parray);
 
